@@ -50,3 +50,39 @@ body {
 .navbar-brand p span {
     vertical-align: middle;
 }
+
+#nav-list {
+    margin-top: 10px;
+}
+
+#nav-list a {
+    color: #951C49;
+    text-align: center;
+}
+
+#nav-list a:hover {
+    background-color: #E7E7E7;
+}
+
+#nav-list a span {
+    font-size: 1.8em;
+}
+#phone {
+    margin-top: 5px;
+}
+nav .navbar-toggler {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    background-image: none;
+    border: 1x solid transparent;
+    border-radius: 4px;
+}
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
