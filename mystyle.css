@@ -103,7 +103,13 @@ nav .navbar-toggler {
 }
 
 @media (min-width: 1200px) {
-    
+    .jumbotron {
+        background-image: url('jumbotron_1200.jpg');
+        background-repeat: no-repeat;
+        height: 675px;
+        box-shadow: 0 0 50px #3F0C1F;
+        border: 2px solid #3F0C1F;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -114,10 +120,23 @@ nav .navbar-toggler {
         height: 100px;
         margin: 5px 5px 5px 0;
     }
+    .jumbotron {
+        background-image: url('jumbotron_992.jpg');
+            background-repeat: no-repeat;
+            height: 558px;
+            box-shadow: 0 0 50px #3F0C1F;
+            border: 2px solid #3F0C1F;
+        }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    
+    .jumbotron {
+        background-image: url('jumbotron_768.jpg');
+        background-repeat: no-repeat;
+        height: 432px;
+        box-shadow: 0 0 50px #3F0C1F;
+        border: 2px solid #3F0C1F;
+    }
 }
 
 @media (max-width: 767px) {
@@ -143,4 +162,19 @@ nav .navbar-toggler {
         font-size: 1em;
         margin-right: 5px;
     }
+    #call-btn > a {
+        font-size: 1.5em;
+        display: block;
+        margin: 0 20px;
+        padding: 10px;
+        border: 2px solid #fff;
+        background-color: #f6b319;
+        color: #951c49;
+      }
+      #xs-deliver {
+        margin-top: 5px;
+        font-size: .7em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
 }
