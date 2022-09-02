@@ -36,7 +36,7 @@ body {
     line-height: .75
 }
 
-.navbar-brand a, .navbar-brand a:hover, .navbar-brand a:focus {
+.navbar-brand a:hover, .navbar-brand a:focus {
     text-decoration: none;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 #nav-list a:hover {
-    background-color: #E7E7E7;
+    background: #E7E7E7;
 }
 
 #nav-list a span {
@@ -70,6 +70,18 @@ body {
 #phone {
     margin-top: 5px;
 }
+
+#phone a {
+    text-align: right;
+    padding-bottom: 0;
+}
+
+#phone div {
+    color: #557c3c;
+    text-align: right;
+    padding-right: 15px;
+}
+
 nav .navbar-toggler {
     position: relative;
     float: right;
@@ -80,9 +92,4 @@ nav .navbar-toggler {
     background-image: none;
     border: 1x solid transparent;
     border-radius: 4px;
-}
-@media (min-width: 768px) {
-    .navbar-toggler {
-        display: none;
-    }
 }
