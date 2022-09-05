@@ -103,7 +103,7 @@ nav .navbar-toggler {
 }
 
 @media (min-width: 1200px) {
-    .jumbotron {
+    .container .jumbotron {
         background-image: url('jumbotron_1200.jpg');
         background-repeat: no-repeat;
         height: 675px;
@@ -120,7 +120,7 @@ nav .navbar-toggler {
         height: 100px;
         margin: 5px 5px 5px 0;
     }
-    .jumbotron {
+    .container .jumbotron {
         background-image: url('jumbotron_992.jpg');
             background-repeat: no-repeat;
             height: 558px;
@@ -130,7 +130,7 @@ nav .navbar-toggler {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .jumbotron {
+    .container .jumbotron {
         background-image: url('jumbotron_768.jpg');
         background-repeat: no-repeat;
         height: 432px;
@@ -176,5 +176,12 @@ nav .navbar-toggler {
         font-size: .7em;
         letter-spacing: .1em;
         text-transform: uppercase;
+      }
+      .container .jumbotron {
+        margin-top: 30px;
+        padding: 0;
+        box-shadow: 0 0 50px #3F0C1F;
+        border: 2px solid #3F0C1F;
+
       }
 }
