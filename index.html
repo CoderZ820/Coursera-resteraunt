@@ -4,15 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>David Chu's China Bistro</title>
         <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="mystyle.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-        <title>David Chu's China Bistro</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" type="text/css">
     </head>
 <body>
   <header>
@@ -37,14 +33,15 @@
               <span class="icon-bar"></span>
             </button>
         </div>
+
         <div id="collapsable-nav" class="collapse navbar-collapse">
           <ul id="nav-list" class="nav navbar-nav navbar-right">
-            <li class="visible-xs active">
+            <li id="navHomeButton" class="visible-xs active">
               <a href="index.html">
                 <span class="glyphicon glyphicon-home"></span> Home</a>
             </li>
-            <li>
-              <a href="menu-categories.html">
+            <li id="navMenuButton">
+              <a href="#" onclick="$dc.loadMenuCategories();">
                 <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
             </li>
             <li>
@@ -64,14 +61,14 @@
       </div>
     </nav>
   </header>
+  
   <div id="call-btn" class="visible-xs">
     <a class="btn" href="tel:410-602-5008">
       <span class="glyphicon glyphicon-earphone"></span>
       410-602-5008
     </a>
   </div>
-  <div id="xs-deliver" class="text-center visible-xs">* We Deliver
-  </div>
+  <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
 
   <div id="main-content" class="container"></div><!-- End of Main Content -->
 
@@ -102,6 +99,7 @@
   </footer>
   <script src="jquery-2.1.4.min.js"></script>
   <script src="bootstrap.min.js"></script>
+  <script src="ajax-utils.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
