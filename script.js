@@ -6,13 +6,17 @@ $(function () {
             $("#collapsable-nav").collapse('hide');
         }
     });
+
+    $("#navbarToggle").click(function (event) {
+        $(event.target).focus();
+    });
 });
 
 (function (global) {
 
     var dc = {};
 
-    var homeHtml = "snippets/home-snippet.html";
+    var homeHtml = "home-snippet.html";
 
     var insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
@@ -21,14 +25,14 @@ $(function () {
 
     var showLoading = function (selector) {
         var html = "<div class='text-center'>";
-        html += "<img src='images/ajax-loader.gif'></div>";
+        html += "<img src='ajax-loader.gif'></div>";
         insertHtml(selector, html);
     };
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
     showLoading("#main-content");
-    $ajaxUtils.sendGetRequest(homeHTML, function (responseText) {
+    $ajaxUtils.sendGetRequest(homeHtml, function (responseText) {
         document.querySelector("#main-content").innerHTML = responseText;
     }, 
     
