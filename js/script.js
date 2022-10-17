@@ -16,19 +16,19 @@ $(function () {
 
     var dc = {};
 
-    var homeHtml = "home-snippet.html";
+    var homeHtml = "snippets/home-snippet.html";
 
     var allCategoriesUrl = "http://davids-restaurant.herokuapp.com/categories.json";
 
-    var categoriesTitleHtml = "categories-title-snippet.html";
+    var categoriesTitleHtml = "snippets/categories-title-snippet.html";
 
-    var categoryHtml = "category-snippet.html";
+    var categoryHtml = "snippets/category-snippet.html";
 
-    var menuItemsUrl = "http://davids-retaurant.herokuapp.com/menu-items.jason?category=";
+    var menuItemsUrl = "http://davids-restaurant.herokuapp.com/menu_items.json?category=";
 
-    var menuItemsTitleHtml = "menu-items-title.html";
+    var menuItemsTitleHtml = "snippets/menu-items-title.html";
 
-    var menuItemHtml = "menu-item.html";
+    var menuItemHtml = "snippets/menu-item.html";
 
 
     var insertHtml = function (selector, html) {
@@ -38,7 +38,7 @@ $(function () {
 
     var showLoading = function (selector) {
         var html = "<div class='text-center'>";
-        html += "<img src='ajax-loader.gif'></div>";
+        html += "<img src='images/ajax-loader.gif'></div>";
         insertHtml(selector, html);
     }; 
 
@@ -117,28 +117,28 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
 
 function buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml,
                                 menuItemHtml) {
-    menuItemHtml = insertProperty(menuItemsTitleHtml, "name", 
-                                    categoryMenuItems.catgory.name);
+    menuItemsTitleHtml = insertProperty(menuItemsTitleHtml, "name", 
+                                    categoryMenuItems.category.name);
     menuItemsTitleHtml = insertProperty(menuItemsTitleHtml,
                                         "special_instruction",
-                                        Special_instructions);
+                        categoryMenuItems.category.special_instructions);
     var finalHtml = menuItemsTitleHtml;
     finalHtml += "<section class='row'>"
 
     var menuItems = categoryMenuItems.menu_items;
     var catShortName = categoryMenuItems.category.short_name;
 
-    for (var i = 0; i < menuItems.lenght; i++) {
+    for (var i = 0; i < menuItems.length; i++) {
         var html = menuItemHtml;
         html = insertProperty(html, "short_name", menuItems[i].short_name);
         html = insertProperty(html, "catShortName", catShortName);
-        html = insertItemPrice(html, "price_small", menuItem[i].price_small);
+        html = insertItemPrice(html, "price_small", menuItems[i].price_small);
         html = insertItemPortionName(html, "small_portion_name",
                                     menuItems[i].small_portion_name);
         html = insertItemPrice(html, "price_large",
                                 menuItems[i].price_large);
         html = insertItemPortionName(html, "large_portion_name",
-                                        menuItem[i].large_portion_name);
+                                        menuItems[i].large_portion_name);
         html = insertProperty(html, "name", menuItems[i].name);
         html = insertProperty(html, "description", menuItems[i].description);
 
