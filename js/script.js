@@ -49,6 +49,20 @@ $(function () {
             return string;
     }
 
+    var switchMenuToActive = function () {
+        
+        var classes = document.querySelector("#navHomeButton").className;
+        classes = classes.replace(new RegExp("active", "g"), "");
+        document.querySelector("#navHomeButton").className = classes;
+      
+        
+        classes = document.querySelector("#navMenuButton").className;
+        if (classes.indexOf("active") == -1) {
+          classes += " active";
+          document.querySelector("#navMenuButton").className = classes;
+        }
+      };
+
 document.addEventListener("DOMContentLoaded", function (event) {
 
     showLoading("#main-content");
@@ -107,6 +121,9 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
         menuItemsTitleHtml, function (menuItemsTitleHtml) {
             $ajaxUtils.sendGetRequest(
                 menuItemHtml, function (menuItemHtml) {
+
+                    switchMenuToActive();
+                    
                     var menuItemsViewHtml = buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemHtml);
                     insertHtml("#main-content", menuItemsViewHtml);
                 },
@@ -120,7 +137,7 @@ function buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml,
     menuItemsTitleHtml = insertProperty(menuItemsTitleHtml, "name", 
                                     categoryMenuItems.category.name);
     menuItemsTitleHtml = insertProperty(menuItemsTitleHtml,
-                                        "special_instruction",
+                                        "special_instructions",
                         categoryMenuItems.category.special_instructions);
     var finalHtml = menuItemsTitleHtml;
     finalHtml += "<section class='row'>"
@@ -151,7 +168,7 @@ function buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml,
     return finalHtml;
 }
 
-function insertItemPrice(html, pricePropName, pricePropName, priceValue) {
+function insertItemPrice(html, pricePropName, priceValue) {
     if (!priceValue) {
         return insertProperty(html, pricePropName, "");
     }
