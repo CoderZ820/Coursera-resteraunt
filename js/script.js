@@ -90,6 +90,9 @@ dc.loadMenuItems = function (categoryShort) {
 function buildAndShowCategoriesHTML (categories) {
     $ajaxUtils.sendGetRequest (categoriesTitleHtml, function (categoriesTitleHtml) {
         $ajaxUtils.sendGetRequest (categoryHtml, function (categoryHtml) {
+
+            switchMenuToActive();
+            
             var categoriesViewHtml = buildCategoriesViewHtml(categories, categoriesTitleHtml, categoryHtml);
             insertHtml("#main-content", categoriesViewHtml);
         }, 
@@ -123,7 +126,7 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
                 menuItemHtml, function (menuItemHtml) {
 
                     switchMenuToActive();
-                    
+
                     var menuItemsViewHtml = buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemHtml);
                     insertHtml("#main-content", menuItemsViewHtml);
                 },
